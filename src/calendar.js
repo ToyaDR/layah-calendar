@@ -13,6 +13,10 @@ import {
 const useStyles = makeStyles(() => ({
   root: {
     padding: "48px",
+    backgroundColor: "#f5f5f5",
+  },
+  grid: {
+    alignContent: "space-around",
   },
 }));
 export const Calendar = () => {
@@ -22,7 +26,7 @@ export const Calendar = () => {
   const classes = useStyles();
   return (
     <Paper className={classes.root}>
-      <Grid container spacing={8}>
+      <Grid container spacing={8} direction="column" className={classes.grid}>
         <Grid item>
           <TextField
             label="Year"
@@ -35,7 +39,9 @@ export const Calendar = () => {
             <Typography>Calculate</Typography>
           </Button>
         </Grid>
-        <Year currentYear={year} />
+        <Grid item>
+          <Year currentYear={year} />
+        </Grid>
       </Grid>
     </Paper>
   );
