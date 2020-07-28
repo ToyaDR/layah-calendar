@@ -5,7 +5,7 @@
   "main": "App.js",
   "scripts": {
     "start": "parcel index.html",
-    "build": "parcel build index.html --public-url https://toyadr.github.io/layah-calendar/",
+    "build": "parcel build index.html --public-url /layah-calendar/",
     "deploy": "gh-pages -d dist",
     "predeploy": "npm run build",
     "test": "echo \"Error: no test specified\" && exit 1"
