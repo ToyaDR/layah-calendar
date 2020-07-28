@@ -3,7 +3,7 @@
   "name": "layah-calendar",
   "version": "1.0.0",
   "description": "Calendar for Lay'ah D&D Homebrew Setting",
-  "main": "App.js",
+  "main": "src/App.js",
   "scripts": {
     "start": "parcel serve index.html",
     "build": "parcel build index.html --public-url /layah-calendar/",
