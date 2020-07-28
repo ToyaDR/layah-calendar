@@ -1,13 +1,12 @@
 {
-  "homepage": "https://toyadr.github.io/layah-calendar",
   "name": "layah-calendar",
   "version": "1.0.0",
   "description": "Calendar for Lay'ah D&D Homebrew Setting",
   "main": "App.js",
   "scripts": {
     "start": "parcel index.html",
-    "build": "parcel build index.html --public-url ./",
-    "deploy": "gh-pages -b master -d dist",
+    "build": "parcel build index.html --public-url https://toyadr.github.io/layah-calendar/",
+    "deploy": "gh-pages -d dist",
     "predeploy": "npm run build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
