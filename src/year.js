@@ -1,7 +1,7 @@
 import React from "react";
 import MONTHS, { duration } from "./constants/months";
 import Month from "./month";
-import { Typography, Grid } from "@material-ui/core";
+import { Grid } from "@material-ui/core";
 
 const processMonths = (months, annualStartingDay) =>
   months.reduce((acc, month, idx) => {
@@ -23,7 +23,6 @@ const Year = ({ currentYear }) => {
   const annualStartingDay = (currentYear * 354 + 1) % 7;
   return (
     <Grid container direction="column" spacing={5}>
-      <Typography>{currentYear}</Typography>
       {processMonths(MONTHS, annualStartingDay).map(
         ({ month, startingDay, duration }) => (
           <Month month={month} startingDay={startingDay} duration={duration} />
