@@ -5,9 +5,9 @@ import {
   Grid,
   Card,
   CardContent,
-  Paper,
 } from "@material-ui/core";
 import WEEKDAYS from "./constants/weekdays";
+import currentDate from "./constants/currentDate";
 
 const useStyles = makeStyles(() => ({
   card: {
@@ -17,8 +17,11 @@ const useStyles = makeStyles(() => ({
   cell: {
     width: "80px",
   },
+  currentDay: {
+    backgroundColor: "#B6FFD7",
+  },
 }));
-const Month = ({ month, duration, startingDay }) => {
+const Month = ({ month, duration, startingDay, year }) => {
   const numWeeks = Math.floor(duration / 7) + 1;
 
   const weeks = new Array(numWeeks).fill(numWeeks).map((n, i) => i);
@@ -51,6 +54,25 @@ const Month = ({ month, duration, startingDay }) => {
                   .map((day) => {
                     const printedDay = row * 7 - startingDay + day + 1;
 
+                    if (
+                      currentDate.day === printedDay &&
+                      currentDate.month === month &&
+                      currentDate.year === year
+                    ) {
+                      return (
+                        <Grid item className={classes.cell}>
+                          <Grid
+                            container
+                            spacing={2}
+                            className={classes.currentDay}
+                          >
+                            <Typography variant="caption">
+                              {printedDay}
+                            </Typography>
+                          </Grid>
+                        </Grid>
+                      );
+                    }
                     return printedDay > 0 && printedDay <= duration ? (
                       <Grid item className={classes.cell}>
                         <Grid container spacing={2}>
@@ -62,7 +84,7 @@ const Month = ({ month, duration, startingDay }) => {
                     ) : (
                       <Grid item className={classes.cell}>
                         <Grid container spacing={2}>
-                          <Typography>{"  "}</Typography>
+                          <Typography />
                         </Grid>
                       </Grid>
                     );

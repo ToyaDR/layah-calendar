@@ -25,7 +25,12 @@ const Year = ({ currentYear }) => {
     <Grid container direction="column" spacing={5}>
       {processMonths(MONTHS, annualStartingDay).map(
         ({ month, startingDay, duration }) => (
-          <Month month={month} startingDay={startingDay} duration={duration} />
+          <Month
+            month={month}
+            startingDay={startingDay}
+            duration={duration}
+            year={currentYear}
+          />
         )
       )}
     </Grid>
