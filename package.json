@@ -5,6 +5,7 @@
   "main": "App.js",
   "scripts": {
     "start": "parcel index.html",
+    "build": "parcel build index.html --public-url ./",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
@@ -14,5 +15,8 @@
     "prettier": "^2.0.5",
     "react": "^16.13.1",
     "react-dom": "^16.13.1"
+  },
+  "devDependencies": {
+    "cssnano": "^4.1.10"
   }
 }
