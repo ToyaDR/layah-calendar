@@ -8,6 +8,9 @@ import {
 } from "@material-ui/core";
 import WEEKDAYS from "./constants/weekdays";
 import currentDate from "./constants/currentDate";
+import DryIcon from "./icons/dry-icon";
+import { MONTHS_TO_SEASONS } from "./constants/months";
+import WetIcon from "./icons/wet-icon";
 
 const useStyles = makeStyles(() => ({
   card: {
@@ -32,7 +35,14 @@ const Month = ({ month, duration, startingDay, year }) => {
       <CardContent>
         <Grid container direction="column" spacing={5}>
           <Grid item>
-            <Typography variant="h5">{month}</Typography>
+            <Grid container justify="space-between">
+              <Grid item>
+                <Typography variant="h5">{month}</Typography>
+              </Grid>
+              <Grid item>
+                {MONTHS_TO_SEASONS[month] === "dry" ? <DryIcon /> : <WetIcon />}
+              </Grid>
+            </Grid>
           </Grid>
           <Grid item>
             <Grid container spacing={8}>
