@@ -12,10 +12,11 @@ const useStyles = makeStyles(() => ({
 const Aotea = () => {
   const classes = useStyles();
   return (
-    <svg width="100" height="120">
+    <svg width="100" height="100">
       <g
         transform="rotate(95, 50, 50)
-                    scale(0.3 0.3)"
+                   scale(0.3 0.3)
+                   translate(-110, 0)"
       >
         //cloud
         <path
