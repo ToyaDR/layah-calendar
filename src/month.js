@@ -9,7 +9,10 @@ import {
 import WEEKDAYS from "./constants/weekdays";
 import currentDate from "./constants/currentDate";
 import DryIcon from "./icons/dry-icon";
-import { MONTHS_TO_SEASONS } from "./constants/months";
+import {
+  MONTHS_TO_SEASONS,
+  MONTHS_TO_CONSTELLATIONS,
+} from "./constants/months";
 import WetIcon from "./icons/wet-icon";
 
 const useStyles = makeStyles(() => ({
@@ -39,6 +42,7 @@ const Month = ({ month, duration, startingDay, year }) => {
               <Grid item>
                 <Typography variant="h5">{month}</Typography>
               </Grid>
+              <Grid item>{MONTHS_TO_CONSTELLATIONS[month]}</Grid>
               <Grid item>
                 {MONTHS_TO_SEASONS[month] === "dry" ? <DryIcon /> : <WetIcon />}
               </Grid>
